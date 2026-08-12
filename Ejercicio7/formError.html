@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form con error</title>
+</head>
+<body>
+    <form>
+
+    <label for="nombre">
+        Nombre
+    </label>
+    
+    <input
+        type="text"
+        id="apellido"
+    >
+
+    <label for="email">
+        Email
+    </label>
+
+    <input
+        type="text"
+        id="correo"
+    >
+    <!--Los label y los input no estan asociados entre si  -->
+    <!--los for y los id no coinciden  -->
+    <!--El input del correo deberia de ser type="email"  -->
+
+
+
+    <p>
+        Modalidad
+    </p>
+
+    <input
+        type="radio"
+        name="modalidad"
+        id="presencial"
+    >
+
+    <label for="virtual">
+        Presencial
+    </label>
+
+    <input
+        type="radio"
+        name="modalidad"
+        id="virtual"
+    >
+
+    <label for="virtual">
+        Virtual
+    </label>
+
+    
+    <!-- El primer label hace referencia al input "virtual".  -->
+</form>
+
+</body>
+</html>
