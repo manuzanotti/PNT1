@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Encuesta con IA V2</title>
+        <style>
+        /* 1. Reset básico y diseño de pantalla */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #0f172a; /* Fondo oscuro elegante */
+            color: #f8fafc;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 2. Encabezado principal */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: #38bdf8;
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        /* 3. Estructura del Formulario */
+        main {
+            width: 100%;
+            max-width: 550px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px; /* Separación uniforme entre tarjetas */
+        }
+
+        /* 4. Estilo Tarjeta para cada <section> */
+        section {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Títulos h4 dentro de las secciones */
+        h4 {
+            color: #38bdf8;
+            font-size: 1.1rem;
+            margin-top: 0;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
+        }
+
+        /* 5. Filas de Opciones (Radio y Checkbox) */
+        section div:not(:first-child) {
+        display: flex;
+        align-items: center; /* Centra perfectamente la casilla y el texto verticalmente */
+        justify-content: space-between; /* Mantiene la separación limpia */
+        margin-bottom: 12px;
+}
+
+        /* 2. Estilos para los textos */
+        label {
+            cursor: pointer;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        label:hover {
+            color: #38bdf8;
+        }
+
+        /* 3. Estilos limpios para Radios y Checkboxes */
+        input[type="radio"],
+        input[type="checkbox"] {
+            accent-color: #2563eb;
+            width: 18px;
+            height: 18px;
+            margin: 0; /* Quitamos márgenes raros del navegador */
+            cursor: pointer;
+        }
+
+        /* Estilos personalizados para Inputs (Radio y Checkbox) */
+        input[type="radio"],
+        input[type="checkbox"] {
+            accent-color: #2563eb; /* Color azul al marcar la casilla/bolita */
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+            vertical-align: middle;
+            margin-left: 8px; /* Pequeño espacio con el label */
+        }
+
+        /* 6. Estilo del menú desplegable (<select>) */
+        select {
+            width: 100%;
+            padding: 10px 14px;
+            background-color: #0f172a;
+            border: 1.5px solid #334155;
+            border-radius: 8px;
+            color: #f8fafc;
+            font-size: 0.95rem;
+            outline: none;
+            cursor: pointer;
+            transition: border-color 0.2s ease;
+        }
+
+        select:focus {
+            border-color: #38bdf8;
+        }
+
+        /* 7. Botón de Envío */
+        button[type="submit"] {
+            width: 100%;
+            padding: 14px;
+            background-color: #2563eb;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #1d4ed8;
+        }
+
+        button[type="submit"]:active {
+            transform: scale(0.98);
+        }
+    </style>
+    </head>
+    <body>
+        <header>
+            <h1>Encuesta de conocimiento o preferencias</h1>
+        </header>
+
+        <main>
+
+            <form action="enviar-form">
+                <section>
+
+                    <div>
+                        <h4>Lenguajes de programacion</h4>
+                    </div>
+
+                    <div>
+                        <label for="radio-java">Java</label>
+                        <input type="radio" name="lenguaje" id="radio-java" value="r-java">
+                    </div>
+                    
+                    <div>
+                        <label for="radio-javaScript">JavaScript</label>
+                        <input type="radio" name="lenguaje" id="radio-javaScript" value="r-javaScript">
+                    </div>
+                    
+                    <div>
+                        <label for="radio-csharp">C#</label>
+                        <input type="radio" name="lenguaje" id="radio-csharp" value="r-cSharp">
+                    </div>
+
+                </section>
+
+
+
+                <section>
+
+                    <div>
+                        <h4>Tecnologias conocidas</h4>
+                    </div>
+
+                    <div>
+                        <label for="chb-html">HTML</label>
+                        <input type="checkbox" name="checkbox-html" id="chb-html" value="cbx-html">
+                    </div>
+
+                    <div>
+                        <label for="chb-css">CSS</label>
+                        <input type="checkbox" name="checkbox-css" id="chb-css" value="cbx-css">
+                    </div>
+            
+                    <div>
+                        <label for="chb-javaScript">JavaScript</label>
+                        <input type="checkbox" name="checkbox-javaScript" id="chb-javaScript" value="cbx-js">
+                    </div>
+
+                    <div>
+                        <label for="chb-sql">SQL</label>
+                        <input type="checkbox" name="checkbox-sql" id="chb-sql" value="cbx-sql">
+                    </div>
+
+                    <div>
+                        <label for="chb-java">Java</label>
+                        <input type="checkbox" name="checkbox-java" id="chb-java" value="cbx-java">
+                    </div>
+
+                    <div>
+                        <label for="chb-git">Git</label>
+                        <input type="checkbox" name="checkbox-git" id="chb-git" value="cbx-git">
+                    </div>
+
+                </section>
+
+
+                <section>
+                
+                    <div>
+                        <h4>Carrera</h4>
+                    </div>
+
+                    <select name="carrera" id="carrera">
+                        <option value="ingenieria">Ingenieria</option>
+                        <option value="licenciatura">Licenciatura</option>
+                        <option value="tecnicatura">Tecnicatura</option>
+                        <option value="otro">Otro</option>
+                    </select>
+
+                </section>
+                    
+                    <div>
+                        <button type="submit">Enviar</button>
+                    </div>      
+            </form>
+
+
+        </main>
+
+    </body>
+</html>
