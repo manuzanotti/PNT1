@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulario completo IA</title>
+        <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: #38bdf8;
+            margin: 0;
+        }
+
+        main {
+            width: 100%;
+            max-width: 550px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        section {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        h3 {
+            color: #38bdf8;
+            margin-top: 0;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
+        }
+
+        /* Estilo para los campos de entrada de texto, email, numero, select y textarea */
+        .campo-texto {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            background-color: #0f172a;
+            border: 1.5px solid #334155;
+            border-radius: 6px;
+            color: #f8fafc;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #38bdf8;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        /* Flexbox para alinear opciones de Radio y Checkbox */
+        .opcion-seleccion {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            accent-color: #2563eb;
+            width: 18px;
+            height: 18px;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        label {
+            cursor: pointer;
+            color: #cbd5e1;
+        }
+
+        /* Botón de Enviar */
+        button[type="submit"] {
+            width: 100%;
+            padding: 14px;
+            background-color: #2563eb;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+    </head>
+    <body>
+        <header>
+            <h1>Formulario Completo</h1>
+        </header>
+        
+        <main>
+
+            <form action="enviar-form">
+                <section>
+                    <div>
+                        <h3>Datos Personales</h3>
+                    </div>
+                
+                    <div>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" id="nombre">
+                    </div>
+
+                    <div>
+                        <label for="apellido">Apellido</label>
+                        <input type="text" name="apellido" id="apellido">
+                    </div>
+
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+
+                    <div>
+                        <label for="edad">Edad</label>
+                        <input type="number" name="edad" id="edad" min="1" max="130">
+                    </div>
+                
+                </section>
+
+
+                <section>
+                     <div>
+                        <h3>Curso</h3>
+                    </div>
+                   
+                    <div>
+                        <select name="curso" id="sect-curso">
+                            <option value="java">Java</option>
+                            <option value="javaScript">JavaScript</option>
+                            <option value="testing">Testing</option>
+                            <option value="basesDeDatos">Base de datos</option>
+                        </select>
+                    </div>
+                    
+                </section>
+
+                <section>
+                    <div>
+                        <h3>Modalidad</h3>
+                    </div>
+
+                    <div>
+                        <label for="r-presencial">Precencial</label>
+                        <input type="radio" name="modalidad" id="r-presencial" value="presencial">
+                    </div>
+
+                    <div>
+                        <label for="r-virtual">Virtual</label>
+                        <input type="radio" name="modalidad" id="r-virtual" value="virtual">
+                    </div>
+
+
+                </section>
+
+
+
+
+
+
+                <section>
+                    <div>
+                        <h3>Conocimiento</h3>
+                    </div>
+
+                    <div>
+                        <label for="cbx-html">HTML</label>
+                        <input type="checkbox" name="html" id="cbx-html" value="html">
+                    </div>
+
+                    <div>
+                        <label for="cbx-css">CSS</label>
+                        <input type="checkbox" name="css" id="cbx-css" value="css">
+                    </div>
+
+                    <div>
+                        <label for="cbx-java">Java</label>
+                        <input type="checkbox" name="java" id="cbx-java" value="java">
+                    </div>
+
+                    <div>
+                        <label for="cbx-sql">SQL</label>
+                        <input type="checkbox" name="sql" id="cbx-sql" value="sql">
+                    </div>
+
+                    <div>
+                        <label for="cbx-js">JavaScript</label>
+                        <input type="checkbox" name="js" id="cbx-js" value="js">
+                    </div>
+
+                </section>
+
+                <section>
+
+                    <div>
+                        <h3>Comentarios</h3>
+                    </div>
+
+                    <div>
+                        <textarea name="txt-area" id="txt-area"></textarea>
+                    </div>
+
+                </section>
+
+                    <div>
+                        <button>Inscribirme</button>
+                    </div>
+
+
+            </form>
+
+
+
+        </main>
+
+
+
+    </body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulario completo</title>
+    </head>
+    <body>
+        <header>
+            <h1>Formulario Completo</h1>
+        </header>
+        
+        <main>
+
+            <form action="enviar-form">
+                <section>
+                    <div>
+                        <h3>Datos Personales</h3>
+                    </div>
+                
+                    <div>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" id="nombre">
+                    </div>
+
+                    <div>
+                        <label for="apellido">Apellido</label>
+                        <input type="text" name="apellido" id="apellido">
+                    </div>
+
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+
+                    <div>
+                        <label for="edad">Edad</label>
+                        <input type="number" name="edad" id="edad" min="1" max="130">
+                    </div>
+                
+                </section>
+                
+
+                <section>
+                     <div>
+                        <h3>Curso</h3>
+                    </div>
+                   
+                    <div>
+                        <select name="curso" id="sect-curso">
+                            <option value="java">Java</option>
+                            <option value="javaScript">JavaScript</option>
+                            <option value="testing">Testing</option>
+                            <option value="basesDeDatos">Base de datos</option>
+                        </select>
+                    </div>
+                    
+                </section>
+
+                <section>
+                    <div>
+                        <h3>Modalidad</h3>
+                    </div>
+
+                    <div>
+                        <label for="r-presencial">Precencial</label>
+                        <input type="radio" name="modalidad" id="r-presencial" value="presencial">
+                    </div>
+
+                    <div>
+                        <label for="r-virtual">Virtual</label>
+                        <input type="radio" name="modalidad" id="r-virtual" value="virtual">
+                    </div>
+
+
+                </section>
+
+
+
+
+
+
+                <section>
+                    <div>
+                        <h3>Conocimiento</h3>
+                    </div>
+
+                    <div>
+                        <label for="cbx-html">HTML</label>
+                        <input type="checkbox" name="html" id="cbx-html" value="html">
+                    </div>
+
+                    <div>
+                        <label for="cbx-css">CSS</label>
+                        <input type="checkbox" name="css" id="cbx-css" value="css">
+                    </div>
+
+                    <div>
+                        <label for="cbx-java">Java</label>
+                        <input type="checkbox" name="java" id="cbx-java" value="java">
+                    </div>
+
+                    <div>
+                        <label for="cbx-sql">SQL</label>
+                        <input type="checkbox" name="sql" id="cbx-sql" value="sql">
+                    </div>
+
+                    <div>
+                        <label for="cbx-js">JavaScript</label>
+                        <input type="checkbox" name="js" id="cbx-js" value="js">
+                    </div>
+
+                </section>
+
+                <section>
+
+                    <div>
+                        <h3>Comentarios</h3>
+                    </div>
+
+                    <div>
+                        <textarea name="txt-area" id="txt-area"></textarea>
+                    </div>
+
+                </section>
+
+                    <div>
+                        <button>Inscribirme</button>
+                    </div>
+
+
+            </form>
+
+            <!-- Utilizo la etiqueta form para envolver todo dentro del mismo formulario. -->
+            <!-- Utilizo section y div para separar en distintos contenedores y sea mas facil de aplicar css -->
+            <!-- Utilizo las etiquetas label para indicar que dato se debe ingresar  -->
+            <!-- Los input los asocio a su respectiva etiqueta mendiante el for y le name -->
+            <!-- En casos especificos como el mail y la contraseña o edad utilizo su etiqueta especifica
+                 la misma tiene su requerimiento, por ejemplo el mail requiero un @ejemplo... -->
+            <!-- Utilizo select / option para hacer una lista desplegable de opciones las cuales se puede elegir solo una -->
+            <!-- Radio me permite mostrar en forma de lista, varios items y seleccionar uno de ellos.   -->
+            <!-- Checkbox es similar a radio pero nos permite la seleccion de 0 a varios items de la misma.  -->
+            <!-- Utilizo textArea para dejar visible un cuadrado de texto para el ingreso de datos, se puede modifar su tamaño 
+                 siendo fijo o escalable a medida que el texto avanza -->
+        </main>
+
+
+
+    </body>
+</html>
+
+
+

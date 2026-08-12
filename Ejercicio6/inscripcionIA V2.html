@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulario completo</title>
+    <style>
+        /* 1. RESET Y BASE */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #0f172a; /* Fondo oscuro elegante */
+            color: #f8fafc;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 2. ENCABEZADO */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: #38bdf8;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        /* 3. ESTRUCTURA Y TARJETAS */
+        main {
+            width: 100%;
+            max-width: 580px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        section {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        h3 {
+            color: #38bdf8;
+            font-size: 1.15rem;
+            margin-bottom: 18px;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
+        }
+
+        /* 4. CAMPOS DE TEXTO, EMAIL, TEL, EDAD, FECHA, SELECT Y TEXTAREA */
+        section > div {
+            margin-bottom: 14px;
+        }
+
+        section > div:last-child {
+            margin-bottom: 0;
+        }
+
+        label {
+            display: inline-block;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+            cursor: pointer;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            background-color: #0f172a;
+            border: 1.5px solid #334155;
+            border-radius: 8px;
+            color: #f8fafc;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* Cambia el color del borde al hacer foco */
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+        }
+
+        /* Ajustes específicos de calendario e inputs numéricos */
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1); /* Pone el ícono del calendario en blanco */
+            cursor: pointer;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+            font-family: inherit;
+        }
+
+        /* 5. OPCIONES DE RADIO Y CHECKBOX (Alineación perfecta) */
+        section div:has(input[type="radio"]),
+        section div:has(input[type="checkbox"]) {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* En caso de que el navegador no soporte :has, aseguramos estilo de labels */
+        section div label {
+            margin-bottom: 0;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            accent-color: #2563eb;
+            width: 18px;
+            height: 18px;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        /* 6. BOTÓN DE ENVÍO */
+        .contenedor-boton {
+            margin-top: 10px;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 14px;
+            background-color: #2563eb;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #1d4ed8;
+        }
+
+        button[type="submit"]:active {
+            transform: scale(0.98);
+        }
+    </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>Formulario Completo</h1>
+        </header>
+        
+        <main>
+
+            <form action="enviar-form">
+                <section>
+                    <div>
+                        <h3>Datos Personales</h3>
+                    </div>
+                
+                    <div>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" id="nombre" required>
+                    </div>
+
+                    <div>
+                        <label for="apellido">Apellido</label>
+                        <input type="text" name="apellido" id="apellido">
+                    </div>
+
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+
+                    <div>
+                        <label for="edad">Edad</label>
+                        <input type="number" name="edad" id="edad" min="1" max="130">
+                    </div>
+
+                    <div>
+                        <label for="telefono">Telefono</label>
+                        <input type="tel" name="tel" id="telefono" required>
+                    </div>
+
+                    <div>
+                        <label for="fechaNac">Fecha de nacimiento</label>
+                        <input type="date" name="fechaNac" id="fechaNac">
+                    </div>
+                
+                </section>
+                
+
+                <section>
+                     <div>
+                        <h3>Curso</h3>
+                    </div>
+                   
+                    <div>
+                        <select name="curso" id="sect-curso" required>
+                            <option value="java">Java</option>
+                            <option value="javaScript">JavaScript</option>
+                            <option value="testing">Testing</option>
+                            <option value="basesDeDatos">Base de datos</option>
+                            <option value="html">HTML</option>
+                        </select>
+                    </div>
+                    
+                </section>
+
+                <section>
+                    <div>
+                        <h3>Modalidad</h3>
+                    </div>
+
+                    <div>
+                        <label for="r-presencial">Precencial</label>
+                        <input type="radio" name="modalidad" id="r-presencial" value="presencial">
+                    </div>
+
+                    <div>
+                        <label for="r-virtual">Virtual</label>
+                        <input type="radio" name="modalidad" id="r-virtual" value="virtual">
+                    </div>
+
+
+                </section>
+
+
+
+
+
+
+                <section>
+                    <div>
+                        <h3>Conocimiento</h3>
+                    </div>
+
+                    <div>
+                        <label for="cbx-html">HTML</label>
+                        <input type="checkbox" name="html" id="cbx-html" value="html">
+                    </div>
+
+                    <div>
+                        <label for="cbx-css">CSS</label>
+                        <input type="checkbox" name="css" id="cbx-css" value="css">
+                    </div>
+
+                    <div>
+                        <label for="cbx-java">Java</label>
+                        <input type="checkbox" name="java" id="cbx-java" value="java">
+                    </div>
+
+                    <div>
+                        <label for="cbx-sql">SQL</label>
+                        <input type="checkbox" name="sql" id="cbx-sql" value="sql">
+                    </div>
+
+                    <div>
+                        <label for="cbx-js">JavaScript</label>
+                        <input type="checkbox" name="js" id="cbx-js" value="js">
+                    </div>
+
+                </section>
+
+                <section>
+
+                    <div>
+                        <h3>Comentarios</h3>
+                    </div>
+
+                    <div>
+                        <textarea name="txt-area" id="txt-area"></textarea>
+                    </div>
+
+                </section>
+
+                    <div>
+                        <button type="submit">Enviar</button>
+                    </div>
+
+
+            </form>
+
+            <!-- Utilizo la etiqueta form para envolver todo dentro del mismo formulario. -->
+            <!-- Utilizo section y div para separar en distintos contenedores y sea mas facil de aplicar css -->
+            <!-- Utilizo las etiquetas label para indicar que dato se debe ingresar  -->
+            <!-- Los input los asocio a su respectiva etiqueta mendiante el for y le name -->
+            <!-- En casos especificos como el mail y la contraseña o edad utilizo su etiqueta especifica
+                 la misma tiene su requerimiento, por ejemplo el mail requiero un @ejemplo... -->
+            <!-- Utilizo select / option para hacer una lista desplegable de opciones las cuales se puede elegir solo una -->
+            <!-- Radio me permite mostrar en forma de lista, varios items y seleccionar uno de ellos.   -->
+            <!-- Checkbox es similar a radio pero nos permite la seleccion de 0 a varios items de la misma.  -->
+            <!-- Utilizo textArea para dejar visible un cuadrado de texto para el ingreso de datos, se puede modifar su tamaño 
+                 siendo fijo o escalable a medida que el texto avanza -->
+        </main>
+
+
+
+    </body>
+</html>
+
+
+
