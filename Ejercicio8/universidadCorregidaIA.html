@@ -1,0 +1,270 @@
+
+<!-- Esta seria la primer version armada sin ningun requerimiento ni correccion del cliente -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universidad Base</title>
+    <style>
+        /* 1. RESET Y BASE */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #0f172a; /* Fondo oscuro elegante */
+            color: #f8fafc;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 2. ENCABEZADO */
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        header h1 {
+            color: #38bdf8;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        /* 3. ESTRUCTURA Y TARJETAS */
+        main {
+            width: 100%;
+            max-width: 520px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Agrupamos cada sección como una tarjeta */
+        section section {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        h3 {
+            color: #38bdf8;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
+            margin-bottom: 4px;
+        }
+
+        /* 4. LABELS, INPUTS, SELECT Y TEXTAREA */
+        label {
+            display: inline-block;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+            cursor: pointer;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            background-color: #0f172a;
+            border: 1.5px solid #334155;
+            border-radius: 8px;
+            color: #f8fafc;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* Ilumina el borde al hacer foco */
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 90px;
+            font-family: inherit;
+        }
+
+        /* 5. ALINEACIÓN PARA RADIOS Y CHECKBOXES */
+        section section div:has(input[type="radio"]),
+        section section div:has(input[type="checkbox"]) {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 2px;
+        }
+
+        section section div label {
+            margin-bottom: 0; /* Quita el margen inferior solo en opciones */
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            accent-color: #2563eb;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        /* 6. BOTÓN DE ENVÍO */
+        button[type="submit"] {
+            width: 100%;
+            padding: 14px;
+            background-color: #2563eb;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            margin-top: 10px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #1d4ed8;
+        }
+
+        button[type="submit"]:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <!-- Separo en distintos contenedores los Datos a solicitar -->
+      <!--Les agrego tambien un h3 como si fuera la seccion o el "titulo"  -->
+    <headed>
+        <h1>Formulario de inscripcion</h1>
+    </header>
+    <main>
+        <form action="">
+            <section>
+                <section>
+                    <div>
+                        <h3>Datos Personales</h3>
+                    </div>    
+                    <div>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="name" id="nombre" required>   <!-- Agregamos required para que sea obligatorio llenar este campo -->
+                    </div>    
+                    
+                    <div>
+                        <label for="apellido">Apellido</label>
+                        <input type="text" name="lastname" id="apellido">   
+                    </div> 
+
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" name="msg" id="email"> <!-- Agregamos required para que sea obligatorio llenar este campo -->
+                    </div> 
+                </section>
+
+
+                <section> <!-- Armo una seccion para separar responsabilidad y poder tener mas limio el css -->
+                          <!-- Voy a usar un select, suponiendo que el cliente quiere ver una lista desplegable con las carreras -->
+                        <div>
+                            <h3>Carrera</h3>
+                        </div>
+                        <select name="carrera" id="carrera">
+                            <option value="ingenieria">Ingenieria</option>
+                            <option value="licenciatura">Licenciatura</option>
+                            <option value="tecnicatura">Tecnicatura</option>
+                        </select>
+                </section>
+
+                <section>
+                     <!-- Aca voy a usar el input "radio" ya que se debe ejegir entre 2 opciones-->
+                     <!-- Solo se puede seleccionar una de ellas. -->
+                     <div>
+                        <h3>Modalidad</h3>
+                    </div>
+                    
+                    <div>
+                        <input type="radio" name="mod" id="precencial" value="precencial"> 
+                        <label for="precencial">Precencial</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="mod" id="virtual" value="virtual"> 
+                        <label for="virtual">Virtual</label> 
+                    </div>
+
+                </section>
+
+                <section>
+                    <div>
+                        <h3>Conocimientos</h3>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="html" id="html" value="html"> 
+                        <label for="html">HTML</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="css" id="css" value="css"> 
+                        <label for="css">CSS</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="js" id="js" value="js"> 
+                        <label for="js">Js</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="java" id="java" value="java"> 
+                        <label for="java">Java</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="python" id="python" value="python"> 
+                        <label for="python">Python</label>
+                    </div>
+
+                </section>
+
+                <!-- Agregamos un textarea para que pueda escribir varios renglones-->
+                <section>
+                    <div>
+                        <label for="com">Dejanos tus comentarios!</label>
+                        <br>
+                        <textarea name="comentarios" id="com"></textarea>  
+                    </div>
+                </section>
+ 
+            </section>
+
+
+            <div>
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+
+
+    </main>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+
+<!-- Esta seria la primer version armada sin ningun requerimiento ni correccion del cliente -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universidad Base</title>
+    
+</head>
+<body>
+    <!-- Separo en distintos contenedores los Datos a solicitar -->
+      <!--Les agrego tambien un h3 como si fuera la seccion o el "titulo"  -->
+    <headed>
+        <h1>Formulario de inscripcion</h1>
+    </header>
+    <main>
+        <form action="">
+            <section>
+                <section>
+                    <div>
+                        <h3>Datos Personales</h3>
+                    </div>    
+                    <div>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="name" id="nombre" required>   <!-- Agregamos required para que sea obligatorio llenar este campo -->
+                    </div>    
+                    
+                    <div>
+                        <label for="apellido">Apellido</label>
+                        <input type="text" name="lastname" id="apellido">   
+                    </div> 
+
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" name="msg" id="email"> <!-- Agregamos required para que sea obligatorio llenar este campo -->
+                    </div> 
+                </section>
+
+
+                <section> <!-- Armo una seccion para separar responsabilidad y poder tener mas limio el css -->
+                          <!-- Voy a usar un select, suponiendo que el cliente quiere ver una lista desplegable con las carreras -->
+                        <div>
+                            <h3>Carrera</h3>
+                        </div>
+                        <select name="carrera" id="carrera">
+                            <option value="ingenieria">Ingenieria</option>
+                            <option value="licenciatura">Licenciatura</option>
+                            <option value="tecnicatura">Tecnicatura</option>
+                        </select>
+                </section>
+
+                <section>
+                     <!-- Aca voy a usar el input "radio" ya que se debe ejegir entre 2 opciones-->
+                     <!-- Solo se puede seleccionar una de ellas. -->
+                     <div>
+                        <h3>Modalidad</h3>
+                    </div>
+                    
+                    <div>
+                        <input type="radio" name="mod" id="precencial" value="precencial"> 
+                        <label for="precencial">Precencial</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="mod" id="virtual" value="virtual"> 
+                        <label for="virtual">Virtual</label> 
+                    </div>
+
+                </section>
+
+                <section>
+                    <div>
+                        <h3>Conocimientos</h3>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="html" id="html" value="html"> 
+                        <label for="html">HTML</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="css" id="css" value="css"> 
+                        <label for="css">CSS</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="js" id="js" value="js"> 
+                        <label for="js">Js</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="java" id="java" value="java"> 
+                        <label for="java">Java</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="python" id="python" value="python"> 
+                        <label for="python">Python</label>
+                    </div>
+
+                </section>
+
+                <!-- Agregamos un textarea para que pueda escribir varios renglones-->
+                <section>
+                    <div>
+                        <label for="com">Dejanos tus comentarios!</label>
+                        <br>
+                        <textarea name="comentarios" id="com"></textarea>  
+                    </div>
+                </section>
+ 
+            </section>
+
+
+            <div>
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+
+
+    </main>
+
+
+
+
+</body>
+</html>
