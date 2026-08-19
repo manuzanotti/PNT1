@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L2-Patagonia</title>
+    <style>
+
+        /* =========================
+           CONFIGURACIÓN GENERAL
+        ========================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.55),
+                    rgba(0, 0, 0, 0.75)
+                ),
+                url(images/banner2.png);
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            font-family: Arial, Helvetica, sans-serif;
+            color: #eeeeee;
+
+            min-height: 100vh;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        header {
+            background: rgba(0, 0, 0, 0.85);
+
+            border-bottom: 2px solid #c9a227;
+
+            padding: 20px;
+
+            text-align: center;
+
+            box-shadow:
+                0 4px 15px rgba(0, 0, 0, 0.8);
+        }
+
+        header h1 {
+            color: #d4af37;
+
+            font-size: 42px;
+
+            letter-spacing: 5px;
+
+            text-shadow:
+                0 0 10px rgba(212, 175, 55, 0.6),
+                2px 2px 4px #000;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           MENÚ
+        ========================== */
+
+        nav {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+        }
+
+        nav a {
+            color: #ffffff;
+
+            text-decoration: none;
+
+            padding: 12px 22px;
+
+            border: 1px solid #555;
+
+            background: rgba(40, 40, 40, 0.8);
+
+            border-radius: 4px;
+
+            transition: all 0.3s ease;
+
+            text-transform: uppercase;
+
+            font-size: 14px;
+
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            background: #c9a227;
+
+            color: #111;
+
+            border-color: #e4c65a;
+
+            box-shadow:
+                0 0 12px rgba(212, 175, 55, 0.6);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           CONTENIDO PRINCIPAL
+        ========================== */
+
+        main {
+            width: 90%;
+
+            max-width: 1100px;
+
+            margin: 40px auto;
+        }
+
+
+        /* =========================
+           SECCIONES
+        ========================== */
+
+        section {
+            background:
+                linear-gradient(
+                    rgba(20, 20, 20, 0.92),
+                    rgba(10, 10, 10, 0.92)
+                );
+
+            border: 1px solid #555;
+
+            border-left: 3px solid #c9a227;
+
+            margin-bottom: 30px;
+
+            padding: 30px;
+
+            border-radius: 5px;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.7);
+        }
+
+
+        /* =========================
+           TÍTULOS
+        ========================== */
+
+        h2,
+        h3 {
+            color: #d4af37;
+
+            text-shadow:
+                2px 2px 4px #000;
+        }
+
+        h2 {
+            font-size: 28px;
+
+            margin-bottom: 20px;
+
+            border-bottom: 1px solid #555;
+
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 24px;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           TEXTO
+        ========================== */
+
+        p {
+            line-height: 1.8;
+
+            color: #dddddd;
+
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           FORMULARIO
+        ========================== */
+
+        form {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 18px;
+        }
+
+        form div {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 7px;
+        }
+
+        label {
+            color: #d4af37;
+
+            font-weight: bold;
+        }
+
+        input {
+            padding: 12px;
+
+            background: rgba(0, 0, 0, 0.7);
+
+            border: 1px solid #555;
+
+            color: white;
+
+            border-radius: 4px;
+
+            outline: none;
+
+            font-size: 15px;
+        }
+
+        input:focus {
+            border-color: #d4af37;
+
+            box-shadow:
+                0 0 8px rgba(212, 175, 55, 0.4);
+        }
+
+
+        /* =========================
+           CHECKBOX
+        ========================== */
+
+        #edad {
+            width: 18px;
+
+            height: 18px;
+
+            accent-color: #c9a227;
+        }
+
+
+        /* =========================
+           BOTÓN
+        ========================== */
+
+        button {
+            padding: 13px 25px;
+
+            background:
+                linear-gradient(
+                    #d4af37,
+                    #9c7917
+                );
+
+            border: 1px solid #e4c65a;
+
+            color: #111;
+
+            font-weight: bold;
+
+            font-size: 15px;
+
+            border-radius: 4px;
+
+            cursor: pointer;
+
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background:
+                linear-gradient(
+                    #f0d76b,
+                    #c9a227
+                );
+
+            box-shadow:
+                0 0 15px rgba(212, 175, 55, 0.6);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           DESCARGA
+        ========================== */
+
+        .download {
+            display: inline-block;
+
+            transition: all 0.3s ease;
+        }
+
+        .download img {
+            width: 220px;
+
+            border-radius: 6px;
+
+            border: 2px solid #555;
+
+            display: block;
+        }
+
+        .download:hover {
+            transform: scale(1.05);
+
+            filter:
+                drop-shadow(
+                    0 0 10px
+                    rgba(212, 175, 55, 0.6)
+                );
+        }
+
+
+        /* =========================
+           TABLA RANKING
+        ========================== */
+
+        table {
+            width: 100%;
+
+            border-collapse: collapse;
+
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        th {
+            background: #171717;
+
+            color: #d4af37;
+
+            padding: 15px;
+
+            border-bottom: 2px solid #c9a227;
+
+            text-align: left;
+        }
+
+        td {
+            padding: 13px;
+
+            border-bottom: 1px solid #444;
+
+            color: #dddddd;
+        }
+
+        tr:hover td {
+            background: rgba(212, 175, 55, 0.1);
+
+            color: white;
+        }
+
+
+        /* =========================
+           LISTA
+        ========================== */
+
+        ul {
+            list-style: none;
+
+            margin-bottom: 15px;
+        }
+
+        li {
+            padding: 8px 0;
+
+            color: #cccccc;
+        }
+
+        li::before {
+            content: "⚔ ";
+
+            color: #d4af37;
+        }
+
+
+        /* =========================
+           TEXTAREA
+        ========================== */
+
+        textarea {
+            width: 100%;
+
+            min-height: 120px;
+
+            resize: vertical;
+
+            background: rgba(0, 0, 0, 0.7);
+
+            border: 1px solid #555;
+
+            border-radius: 4px;
+
+            color: white;
+
+            padding: 12px;
+
+            outline: none;
+        }
+
+        textarea:focus {
+            border-color: #d4af37;
+
+            box-shadow:
+                0 0 8px rgba(212, 175, 55, 0.4);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+
+            border-top: 2px solid #c9a227;
+
+            padding: 30px;
+
+            text-align: center;
+
+            margin-top: 50px;
+        }
+
+        footer p {
+            max-width: 900px;
+
+            margin: auto;
+
+            color: #999;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 700px) {
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                width: 100%;
+            }
+
+            main {
+                width: 95%;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            table {
+                font-size: 13px;
+            }
+
+            th,
+            td {
+                padding: 8px;
+            }
+
+        }
+
+    </style>
+ 
+    
+    </head>
+    <body>
+        <header>
+            
+            <h1>Lineage 2</h1>
+
+            <nav>
+                <a href="">Incio</a>
+                <a href="">Registro</a>
+                <a href="">Informacion</a>
+                <a href="">Descargas</a>
+                <a href="">Reglas</a>
+                <a href="">Soporte</a>
+            </nav>
+        </header>
+
+        <main>
+
+            <section>
+                <div>
+                    <h2>Informacion del Juego</h2>
+                </div>
+                <div>
+                    <p>
+                        Lineage II
+
+                            Adéntrate en un mundo de fantasía, aventura y batallas épicas. Lineage II es un MMORPG donde podrás crear tu personaje, elegir tu clase, formar alianzas y enfrentarte a otros jugadores en un mundo lleno de desafíos.
+
+                            Explora vastos territorios, derrota poderosos enemigos, consigue equipamiento y desarrolla tu personaje mientras te preparas para las grandes batallas. Forma parte de un clan, participa en asedios y lucha por conquistar el mundo de L2 Patagonia.
+
+                            Tu aventura comienza ahora. ¿Estás preparado?
+                    </p>
+                </div>
+            </section>
+
+
+            <section>
+                <form action="for-registro">
+                    
+                    <div>
+                        <h3>Creacion de Cuenta</h3>
+                    </div>
+                    <div>
+                        <label for="usuario">Usuario</label>
+                        <input type="text" name="usser" id="usuario" required>
+                    </div>
+
+                    <div>
+                        <label for="contrasenia">Contraseña</label>
+                        <input type="password" name="password" id="contrasenia" required>
+                    </div>
+
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" name="msg" id="email" required>
+                    </div>
+
+                    <div>
+                        <label for="edad">Soy mayor de edad</label>
+                        <input type="checkbox" name="edad" id="edad" required>                  
+                    </div>
+
+                    <div>
+                        <button type="submit">Crear cuenta</button>
+                    </div>
+
+                </form>
+            </section>
+
+
+            <section>
+                <div>
+                    <h3>
+                        Descarga el Cliente
+                    </h3>
+                </div>
+
+                <div>
+                    <a class="download" href="https://github.com/manuzanotti/PNT1" target="_blank" rel="noopener noreferrer">
+                        <img src="images/mediafire.jpeg" alt="">
+                    </a>
+                </div>
+            </section>
+
+            <section>
+                <table>
+                    <tr>
+                        <th>Ranking</th>
+                        <th>Nombre</th>
+                        <th>Clase</th>
+                        <th>PVP</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Elfo23</td>
+                        <td>Elfo de la luz</td>
+                        <td>2000</td>                        
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Humano12</td>
+                        <td>Humano</td>
+                        <td>1850</td>                        
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Drakula</td>
+                        <td>Elfo de la noche</td>
+                        <td>900</td>                        
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>OrcoMalo</td>
+                        <td>Orco</td>
+                        <td>830</td>                        
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Mapache</td>
+                        <td>Enano</td>
+                        <td>500</td>                        
+                    </tr>
+                                                                                                                                                
+                </table>
+            </section>
+
+            <section>
+                    <form action="">
+
+                        <div>
+                            <h3>Como nos conociste ?</h3>
+                            <ul>
+                                <li>Amigos</li>
+                                <li>Internet</li>
+                                <li>Otro</li>
+                            </ul>
+                            <textarea name="" id=""></textarea>
+                        </div>
+
+                    </form>
+
+
+            </section>
+
+        </main>
+
+        <footer>
+            <p>
+                L2 Patagonia
+
+                Servidor de Lineage II creado para disfrutar de una experiencia de aventura, competencia y comunidad.
+
+                L2 Patagonia © 2026 — Todos los derechos reservados.
+
+                Lineage II es una marca registrada de NCSOFT. Este sitio es un proyecto académico sin relación oficial con NCSOFT.
+            
+            </p>
+
+        </footer>
+
+    </body>
+</html>
