@@ -1,0 +1,11 @@
+Cada ejercicio tiene mínimo un HTML y un htmlIA
+El HTML en general lo hice yo, salvo alguna otra cosa que le he consultado a la IA
+EL htmlIA es la corrección final sumándole CSS mediante IA (ChatGPT)
+
+En algunos ejercicios hay varios HTML, esto es porque como las consignas era modificar o agregar, 
+deje el original e hice los respectivos cambios en el otro html
+
+
+Cada ejercicio tiene un txt donde se explica lo solicitado.
+
+Cualquier HTML funciona, solo que van escalando en cuanto a que tan completos quedan.

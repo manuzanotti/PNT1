@@ -1,0 +1,28 @@
+Explicá:
+¿Por qué una imagen debería tener un atributo alt?
+
+El atributo alt, sirve para en caso de que al cargar la pagina no se encuentre la imagen, haya una referencia de lo que se quiere mostrar
+ejemplo : 
+            <img src="images/Gatito.jpeg" alt="Imagen de un gatito">
+
+
+
+
+
+
+
+
+
+
+
+🔧 Error para encontrar
+El profesor te entrega:
+<img src="foto.jpg" alt="imagen">
+y pregunta:
+La imagen no aparece. ¿Qué cosas revisarías?
+No alcanza con responder "está mal".
+Tenés que indicar qué revisarías y por qué.
+
+
+Lo primero es revisar el src, que este apuntando a donde se guarda la imagen, por lo que veo en este ejemplo
+el problema puede ser que la imagen este dentro de una carpeta y para acceder a ella deberia de hacer <img src="carpetaOrigen/foto.jpg" alt="imagen">

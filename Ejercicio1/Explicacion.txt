@@ -1,0 +1,15 @@
+¿Qué función cumple <html>?
+    La etiqueta html le indica al browser como esta estructurada la pagina.
+
+
+¿Qué diferencia hay entre <head> y <body>?
+    El head se utiliza para metadatos, que no seran visibles en nuestra pagina.
+    El body es el cuerpo de nuestra pagina, alli se volcara todo el contenido que queremos que sea visto.
+
+
+¿Para qué sirve <title>?
+    La etiqueta title nos permite darle un texto a nuestra pestaña
+
+
+¿Qué diferencia hay entre <h1> y <h2>?
+    h1 solo se puede usar una vez

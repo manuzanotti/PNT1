@@ -1,0 +1,28 @@
+1. ¿Utilizaste IA?
+	Sí , para consultar alguna estructura de HTML como table y también para aplicar 	el css.
+
+
+2. ¿Qué herramienta utilizaste?
+	Al principio use Gemini, pero la verdad no me gusta mucho, asique pase al gpt de 	openIA
+
+3. ¿Para qué utilizaste IA?
+	No me gusta que la IA haga mi código, pero la verdad me falta practica en 	cuanto 	a la estructura de HTML y todo sobre CSS.
+	En este caso, use la IA para que me indique si la estructura que arme al 	principio estaba bien planteada, si los section/div estaban bien ubicados y 	también consulte algunas partes como por ejemplo como funciona table, como es 	la estructura de un form. Luego toda la parte de CSS esta hecha con IA, 	entiendo un poco, puedo hacer modificaciones, pero me llevo muy mal con la 	parte de flex/flex-box etc... Osea no me sale ubicar los elementos donde los 	quiero.
+	También genere la imagen de fondo con la IA.
+
+
+4. ¿Qué partes modificaste?
+	Hay 2 HTML
+	1- index.html : este en su mayoría esta hecho por mi, consulte a la IA como 	armar la tabla, y al principio el form porque me perdi. Por eso, si abre ese 	index, podrá ver que no tiene casi nada de estilos, solo le agregue una 	imagen de fondo que la armamos con el gpt.
+
+	2- indexIA.html : Este index esta trabajado con IA, le pase mi código armado 	en el index.html y le solicite que agregue CSS para ordenar los elementos 	dentro del HTML y darle un estilo mas prolijo y profesional.
+	
+
+5. ¿Qué problema encontraste durante el desarrollo?
+	Problemas ninguno, porque con la IA se puede solucionar todo, lo que si, es 	que sin la ayuda de la misma, el tema de los estilos, responsabilidades y 	demás, hubiera sido mucho mas difil.
+
+
+6. ¿Cómo lo solucionaste?
+	Todo aquello que me trae problemas para resolver, lo consulte con la IA, 	pidiéndole que me explique que se hace y porque, luego intentar armar primero 	el código yo y una vez terminado, se lo pase a la IA para que lo verifique, 
+		me corrija y lo corrija.
+

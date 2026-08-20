@@ -1,0 +1,45 @@
+<form>
+
+    <label for="nombre">
+        Nombre
+    </label>
+
+    <input
+        type="text"
+        id="apellido"    ------> Mal, el id debe ser igual al for de la etiqueta a la cual tiene relacion.
+    >
+
+    <label for="email">
+        Email
+    </label>
+
+    <input
+        type="text"  ------> Mal, el type debe de ser email
+        id="correo"  ------> Mal, el id correcto es email
+    >
+
+    <p>
+        Modalidad
+    </p>
+
+    <input
+        type="radio"
+        name="modalidad"
+        id="presencial"
+    >
+
+    <label for="virtual">  ------> Mal, el for debe ser Presencial
+        Presencial
+    </label>
+
+    <input
+        type="radio"
+        name="modalidad"
+        id="virtual"
+    >
+
+    <label for="virtual">
+        Virtual
+    </label>
+
+</form>

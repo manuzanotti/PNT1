@@ -1,0 +1,10 @@
+¿Por qué utilizamos radio para el lenguaje?
+¿Por qué utilizamos checkbox para las tecnologías?
+¿Por qué utilizamos select para la carrera?
+
+
+Radio nos permite hacer una seleccion unica entre varios items, mientras que el checkbox
+nos permite marcar mas de una opcion.
+
+Select nos permite hacer una lista desplegable, lo que hace que el contenido ocupe menos espacio en la pantalla
+y a su vez solo se pueda seleccionar una de las opciones.

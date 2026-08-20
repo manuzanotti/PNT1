@@ -1,0 +1,19 @@
+¿Cuál es la diferencia entre <ul> y <ol>?
+Ul es una lista desordenada mientras que ol es una lista ordenada.
+
+¿Para qué sirve <li>?
+    Li se utiliza para cada opcion dentro de la lista, ya sea ordenada o desordenada
+
+
+¿Qué diferencia existe entre <strong> y <em>? 
+    La etiqueta Strong se utiliza para marcar la importancia de una palabra o destacar la misma dentro de un texto
+    Mientras que la etiqueta em sirve para mostrar enfasis, y deja la palabra o texto en cursiva.
+
+
+
+
+El cliente informa que el orden de las películas no importa, pero el orden de las actividades sí.
+¿Qué lista debería utilizarse en cada caso?
+
+En este caso usaria una ul para las peliculas ya que no importa el orden, y cambiara las actividades y le colocaria una order list ol,
+para que vaya de 1 en adelante.

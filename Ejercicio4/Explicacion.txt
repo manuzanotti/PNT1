@@ -1,0 +1,43 @@
+Explicá:
+for="nombre"
+y:
+id="nombre"
+
+Estos son atributos de las etiquetas y deben de tener relacion entre si.
+por ejemplo si hago un label nombre y luego sumo un input para que puedan ingresar datos
+la relacion entre estos atributos indican la relacion entre ambas etiquetas.
+
+
+
+Corregí este código:
+<label for="nombre">
+    Nombre
+</label>
+
+<input
+    type="text"
+    id="apellido"
+>
+Explicá qué estaba mal.
+
+🗣️ Defensa oral
+El profesor puede preguntarte:
+¿Qué pasa si cambio el id del input pero no cambio el for del label?
+
+
+Correccion:
+    <label for="nombre">
+    Nombre
+</label>
+
+<input
+    type="text"
+    id="nombre"
+>
+
+El for y el atributo Id deben de ser iguales si ambas etiquetas tienen relacion entre si.
+
+
+¿Qué pasa si cambio el id del input pero no cambio el for del label?
+
+Mientas que ambos sean iguales esta bien, si solo cambias uno pero al final ambos son diferentes, no tiene cambio alguno, el error persiste y la relacion esta mal.

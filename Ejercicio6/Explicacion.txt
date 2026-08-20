@@ -1,0 +1,11 @@
+            <!-- Utilizo la etiqueta form para envolver todo dentro del mismo formulario. -->
+            <!-- Utilizo section y div para separar en distintos contenedores y sea mas facil de aplicar css -->
+            <!-- Utilizo las etiquetas label para indicar que dato se debe ingresar  -->
+            <!-- Los input los asocio a su respectiva etiqueta mendiante el for y le name -->
+            <!-- En casos especificos como el mail y la contraseña o edad utilizo su etiqueta especifica
+                 la misma tiene su requerimiento, por ejemplo el mail requiero un @ejemplo... -->
+            <!-- Utilizo select / option para hacer una lista desplegable de opciones las cuales se puede elegir solo una -->
+            <!-- Radio me permite mostrar en forma de lista, varios items y seleccionar uno de ellos.   -->
+            <!-- Checkbox es similar a radio pero nos permite la seleccion de 0 a varios items de la misma.  -->
+            <!-- Utilizo textArea para dejar visible un cuadrado de texto para el ingreso de datos, se puede modifar su tamaño 
+                 siendo fijo o escalable a medida que el texto avanza -->
