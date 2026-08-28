@@ -1,3 +1,6 @@
+Nombre y apellido: Juan Manuel Parada Zanotti
+Curso: Programación en Nuevas Tecnologías 1
+
 Cada ejercicio tiene mínimo un HTML y un htmlIA
 El HTML en general lo hice yo, salvo alguna otra cosa que le he consultado a la IA
 EL htmlIA es la corrección final sumándole CSS mediante IA (ChatGPT)
