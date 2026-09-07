@@ -1,0 +1,172 @@
+Este ejercicio tiene gran parte de contenido armado y dado por Gemini.
+Agregue lo mas posible para poder estudiar de el.
+
+
+
+
+
+
+Solicitud 1: POST /api/usuarios
+
+    Método HTTP: POST
+
+    Endpoint recibido: /api/usuarios
+
+    Servicio destino: Servicio de Usuarios (/api/usuarios)
+
+    Justificación: La ruta base /api/usuarios indica que el recurso afectado es la colección de usuarios. 
+    El método POST expresa la intención de registrar o crear un nuevo usuario dentro de dicho servicio.
+
+
+
+
+
+Solicitud 2: GET /api/productos
+
+    Método HTTP: GET
+
+    Endpoint recibido: /api/productos
+
+    Servicio destino: Servicio de Productos (/api/productos)
+
+    Justificación: El prefijo de ruta /api/productos identifica al dominio del catálogo de productos. 
+    El método GET solicita la lectura u obtención del listado de productos disponibles.
+
+
+
+
+
+
+Solicitud 3: POST /api/pedidos
+
+    Método HTTP: POST
+
+    Endpoint recibido: /api/pedidos
+
+    Servicio destino: Servicio de Pedidos (/api/pedidos)
+
+    Justificación: La solicitud apunta a la entidad de transacciones/ventas (/api/pedidos). 
+    El método POST se utiliza para procesar y dar de alta una nueva orden o pedido en el sistema.
+
+
+
+
+
+
+
+
+
+
+Solicitud 4: GET /api/usuarios
+
+    Método HTTP: GET
+
+    Endpoint recibido: /api/usuarios
+
+    Servicio destino: Servicio de Usuarios (/api/usuarios)
+
+    Justificación: Aunque comparte la misma URL base que la Solicitud 1, el método GET cambia el propósito de la 
+    petición hacia la consulta o recuperación de información de los usuarios existentes.
+
+
+
+
+
+
+
+
+Solicitud 5: DELETE /api/libros/titulo
+
+    Método HTTP: DELETE
+
+    Endpoint recibido: /api/libros/titulo
+
+    Servicio destino: Servicio de Libros (/api/libros)
+
+    Recorrido:
+
+El cliente (Frontend) envía la petición DELETE /api/libros/titulo hacia la dirección pública del API Gateway.
+
+El API Gateway analiza la URL y detecta el prefijo /api/libros.
+
+El Gateway reenvía la solicitud de forma interna al Servicio de Libros, adjuntando el parámetro de Titulo (titulo) y el método DELETE.
+
+El Servicio de Libros procesa la baja del producto con su titulo en la base de datos y retorna una respuesta de éxito al Gateway, el cual se la retransmite al cliente.
+
+Justificación: La ruta contiene el identificador específico de un recurso (/titulo) dentro de la colección de libros, y el método HTTP DELETE define formalmente la acción 
+
+de eliminar dicho registro.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Contenido adicinoal para estudiar
+
+
+Además de GET, POST y DELETE, el protocolo HTTP define varios métodos (también llamados "verbos HTTP"). 
+Los más comunes e importantes en el desarrollo web y diseño de APIs son los siguientes:
+
+
+PUT (Reemplazar un recurso por completo)
+    ¿Qué hace?: Actualiza un recurso existente reemplazando todos sus datos con los que envías en la solicitud. 
+    Si el recurso no existe, en algunas APIs también se usa para crearlo.
+
+    Ejemplo: PUT /api/usuarios/5
+    Body: Envías el objeto completo con todos sus campos (nombre, email, edad), incluso los que no cambiaron.
+
+
+
+
+PATCH (Modificación parcial)
+    ¿Qué hace?: Actualiza únicamente los campos específicos que le envías, sin modificar el resto de los datos del recurso.
+    Ejemplo: PATCH /api/usuarios/5
+    Body: Si solo querés cambiar el email, en el body mandás únicamente {"email": "nuevo@mail.com"}.
+
+
+
+OPTIONS (Consultar permisos/métodos permitidos)
+    ¿Qué hace?: Pregunta al servidor qué métodos HTTP y cabeceras están permitidos para una URL específica. 
+    Lo utiliza automáticamente el navegador en segundo plano por motivos de seguridad (CORS - Cross-Origin Resource Sharing) 
+    antes de hacer una petición POST, PUT o DELETE.
+    
+    Ejemplo: OPTIONS /api/productos
+
+
+
+HEAD (Obtener solo cabeceras, sin cuerpo)
+    ¿Qué hace?: Es exactamente igual a un GET, pero el servidor responde únicamente con las cabeceras HTTP, sin enviar el cuerpo (el JSON o HTML).
+    Se usa para verificar si un recurso existe, saber su tamaño o ver si cambió antes de descargarlo completo.
+    Ejemplo: HEAD /api/archivos/reporte.pdf
+
+
+    
+    
+    
+    Método  Acción/Propósito
+
+
+    GET	Leer / Obtener información
+
+    POST	Crear un nuevo recurso
+
+    PUT	Modificar/Reemplazar un recurso entero
+
+    PATCH	Modificar parcialmente un recurso
+
+    DELETE	Eliminar un recurso
+
+    HEAD	Obtener solo cabeceras (como un GET sin datos)
+
+    OPTIONS	Consultar métodos permitidos (CORS)

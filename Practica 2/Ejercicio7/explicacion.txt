@@ -1,0 +1,72 @@
+1.	Qué mensaje se muestra cuando la operación es exitosa.
+  Se muestra el mensaje devuelto por la API en el cuerpo de la respuesta (por ejemplo: "Operación realizada correctamente")
+
+
+2.	Qué mensaje se muestra cuando ocurre un error.
+Se muestra un mensaje de advertencia o falla, como "Los datos enviados son incorrectos"
+(falla de validación en la solicitud) o "No fue posible conectar con el servidor" (falla de conexión a la red)
+
+
+3.	En qué parte del flujo podría haberse producido el error.
+En el cliente / red (Catch): Caída de la conexión a internet, servidor apagado, endpoint mal escrito o error de CORS.
+
+En el servidor (Response HTTP status fuera de 200-299): Error 400 Bad Request 
+(datos obligatorios faltantes o mal formateados) o Error 500 Internal Server Error (falla interna en la base de datos o lógica del backend).
+
+
+4.	Cómo afecta ese error al usuario de la aplicación.
+Frustración e incertidumbre: Si no se le notifica, el usuario no sabe si la acción se realizó correctamente o si debe volver a intentar.
+
+Múltiples envíos: Sin un mensaje claro de error, el usuario tiende a hacer clic repetidamente en el botón de envío, pudiendo generar registros duplicados o colapsar la interfaz.
+
+
+5.	Qué información adicional sería útil mostrar al usuario.
+Sugerencia de acción: Indicar qué hacer a continuación (ej. "Verifique los datos ingresados e intente nuevamente" o "Compruebe su conexión a internet").
+
+Detalle específico del campo: Si falla la validación, especificar qué campo falló (ej. "El correo electrónico ingresado no tiene un formato válido").
+
+Código o referencia de soporte: En errores de servidor, proveer un código de seguimiento para facilitar el reporte al área técnica.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------- Informacion adicional para estudiar ----------------------------------------
+
+
+
+La barra doble || es el operador lógico OR ("o") en JavaScript, y en este contexto se usa para poner un valor por defecto o de respaldo (fallback).
+
+Se lee así: "Usa lo que está a la izquierda, pero si no existe, usa lo que está a la derecha".
+
+¿Por qué lo usamos acá?
+1. En el .then():
+
+JavaScript
+pResultado.textContent = datos.mensaje || "Operación realizada correctamente";
+Intento A (datos.mensaje): Si el servidor manda un JSON que contiene la propiedad mensaje, usará ese texto devuelto por el backend.
+
+Respaldo ("Operación realizada correctamente"): Si por alguna razón el backend solo responde { "estado": "OK" } (sin la clave mensaje), la variable datos.mensaje va a ser undefined. Para evitar que en el HTML se muestre un texto vacío o la palabra "undefined", el || hace que tome automáticamente el texto por defecto.
+
+2. En el .catch():
+
+JavaScript
+pResultado.textContent = error.message || "No fue posible conectar con el servidor";
+Intento A (error.message): Si el error fue generado por nosotros con throw new Error("Los datos enviados son incorrectos"), usará esa frase específica.
+
+Respaldo ("No fue posible conectar con el servidor"): Si el error fue una falla de red (por ejemplo, te quedaste sin internet y fetch falla antes de que exista un mensaje de error claro), se usará la frase de respaldo.
+
+En resumen
+Es una técnica de defensa en código para garantizar que el elemento <p id="resultado"> siempre tenga un texto legible para el usuario, sin importar qué tan completa o incompleta venga la respuesta del backend o el error de red.

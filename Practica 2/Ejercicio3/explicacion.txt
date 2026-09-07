@@ -1,0 +1,26 @@
+1.	¿Qué información se envía en la solicitud?
+    -- Respuesta con IA --
+    
+    Método HTTP (POST).
+    Dirección / Recurso (/api/usuarios): Es la ruta del servidor a la que va dirigida la petición.
+    Cabecera (Content-Type: application/json): Indica que los datos que viajan en el paquete están en formato JSON para que el servidor sepa cómo leerlos.
+    Cuerpo de la solicitud (body): Lleva el texto JSON generado con JSON.stringify(usuario), que contiene las propiedades capturadas del formulario.
+
+
+
+2.	¿Por qué utilizaste el método POST?
+   Le avisa al servidor que la intención de la solicitud es crear o registrar un recurso nuevo.
+
+3.	¿Qué función cumple el body?
+Es el contenedor o paquete donde viajan los datos reales que querés enviar al servidor.
+
+
+
+4.	¿Por qué se utiliza Content-Type: application/json?
+
+Es la "etiqueta del paquete". Le avisa al servidor que el 
+contenido que viaja adentro está en formato JSON para que sepa cómo leerlo.
+
+
+5.  ¿Qué función cumple JSON.stringify() dentro de la solicitud?
+ Empaqueta nuestro objeto Js y lo transforma en un texto Json para que el servidor lo pueda interpretar

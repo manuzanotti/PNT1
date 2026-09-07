@@ -1,0 +1,23 @@
+1.	Qué recurso seleccionaste.
+    Libros.
+
+2.	Qué datos consideraste necesarios.
+    considere como minimo, su Titulo para la busqueda del mismo y datos como categoria y autor como adicionales
+
+
+3.	Qué endpoint utilizaste.
+    "/api/libros"
+
+
+4.	Por qué el endpoint representa correctamente al recurso.
+    - Usa sustantivos en plural (no verbos)
+    - Utiliza la colección en plural
+    - La acción la define el método HTTP, no la URL
+
+
+
+5.	Qué modificaciones debiste realizar respecto del ejercicio anterior.
+    
+    Modifique primero el form del html tanto los labels como los input
+    tambien tuve que moficar el js para obtener correctamente los valores.
+    Los parametros de la solicitud y el endpoint tambien se han modificado.

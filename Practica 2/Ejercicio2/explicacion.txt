@@ -1,0 +1,52 @@
+En este ejercicio agrego un Parrafo para darle salida a mi mensaje
+En este caso seria el JSON de mi objeto Js creado.
+
+
+
+
+1.	Qué campos agregaste.
+
+Arme un formulario nuevo, en el inclui 3 label para nombre,mail,edad.
+Luego arme 3 input para cada label.
+Al final ponemos un boton de tipo sumbit para enviar los datos del formulario.
+
+
+
+
+2.	Cómo obtenés el valor de cada campo desde JavaScript.
+Para obtener el valor y poder almacenarlo en caso de ser necesario, podemos usar la propiedad
+Documento.getElementById(), que al proporcionale un ID asigando a una etiqueta, nos devuelve su valor.
+
+
+
+
+3.	Qué estructura utilizaste para almacenar la información.
+Para almacenar los datos guardados arme un objeto Js.
+
+
+
+
+4.	Por qué considerás que esa estructura es adecuada.
+Podemos generar muchos objetos con distintos valores y guardarlos en una lista por ejemplo.
+Forma parte del encapsulamiento.
+
+
+
+--Info agregada con IA--
+
+Agrupación y Cohesión (Encapsulamiento)
+Si guardaras los datos en variables sueltas (nombre1, email1, edad1), 
+la información estaría desconectada. El objeto reúne bajo una misma entidad (usuario)
+todas las propiedades que le pertenecen a esa persona. Es el equivalente a crear una 
+instancia de una clase en Java o Programación Orientada a Objetos.
+
+Mapeo Directo a Formato JSON (Ideal para AJAX/API)
+El estándar absoluto en la web para enviar datos hacia un Backend o API Gateway es el formato
+JSON (JavaScript Object Notation). Un objeto JS se convierte a JSON de forma instantánea con
+una sola línea (JSON.stringify(usuario)), quedando listo para ser enviado en las etapas 
+avanzadas de tu guía.
+
+Escalabilidad para Múltiples Registros
+Si la aplicación necesita registrar a 100 personas, no creás 100 conjuntos de variables. 
+Simplemente creás una lista (const listaUsuarios = []) e insertás (push) cada objeto usuario 
+adentro. Es el equivalente exacto a tener una lista del tipo ArrayList<Usuario> en Java.

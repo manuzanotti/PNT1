@@ -1,0 +1,44 @@
+1.	Qué acción realiza el usuario.
+El usuario completa el formulario en la interfaz web con sus datos (nombre, email y edad) y presiona el botón de envío ("Submit")
+
+
+2.	Qué información obtiene el frontend.
+JavaScript intercepta el evento de envío mediante addEventListener("submit") y frena la recarga de la página invocando event.preventDefault().
+Luego, lee el contenido de cada campo (.value) y construye un objeto de JavaScript con esa información.
+
+
+3.	Cómo se prepara la solicitud.
+El objeto de JavaScript se convierte en una cadena de texto en formato JSON utilizando JSON.stringify(usuario). 
+Se definen las cabeceras (Content-Type: application/json) para indicarle al servidor qué tipo de contenido se está enviando.
+
+
+4.	Qué función cumple fetch().
+La función fetch() actúa como el cliente HTTP que envía la petición asíncrona (AJAX)
+a través de la red hacia la URL /api/usuarios especificando el método POST y adjuntando el JSON en el cuerpo (body) de la solicitud.
+
+
+5.	Qué rol cumple el API Gateway.
+El API Gateway recibe la petición en la entrada del servidor, analiza el endpoint recibido (/api/usuarios) y determina que pertenece al dominio de usuarios.
+Su función es actuar como punto de entrada unificado y enrutar la solicitud hacia el Servicio/Backend de Usuarios correspondiente.
+
+
+6.	Qué responsabilidad tiene el backend.
+El servicio Backend de Usuarios recibe el JSON, valida la información, procesa la creación del nuevo usuario en la base de datos y genera un objeto JSON
+de respuesta con el estado del procesamiento (ejemplo: {"estado": "OK", "mensaje": "Operación realizada correctamente"}).
+
+
+7.	Cómo regresa la respuesta al frontend.
+La respuesta viaja de vuelta a través de la red en formato JSON. El cliente la recibe mediante promesas. 
+El primer bloque .then(respuesta => respuesta.json()) decodifica la respuesta binaria/texto recibida y la transforma de nuevo en un objeto JavaScript manejable.
+
+
+8.	Cómo se actualiza la página.
+El segundo bloque .then(datos => { ... }) toma el mensaje del backend (datos.mensaje) y actualiza dinámicamente el elemento del DOM <p id="resultado"></p> 
+asignando el texto en pantalla y aplicando un color verde para indicar una operación exitosa, sin haber recargado la página completa en ningún momento.
+
+
+9.	Qué ocurre ante un error.
+Si la conexión a la red falla, el endpoint es inaccesible o el backend responde con un estado de error (por ejemplo, 
+datos no válidos o falla interna), el flujo se desvía hacia el bloque .catch(error => { ... }). 
+En este caso, el código captura la excepción y actualiza el elemento <p id="resultado"></p> mostrando una advertencia descriptiva en color rojo 
+(ejemplo: "No fue posible conectar con el servidor" o "Los datos enviados son incorrectos"), garantizando que el usuario siempre reciba retroalimentación visual clara.

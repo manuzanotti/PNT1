@@ -1,0 +1,100 @@
+1.	Qué respuesta recibe el frontend.
+El frontend recibe desde el backend un mensaje de respuesta HTTP en formato JSON
+
+
+2.	Cómo se procesa la respuesta.
+
+La función fetch() realiza la solicitud asíncrona.
+
+Al recibir la respuesta del servidor, el primer bloque .then(respuesta => respuesta.json()) parsea el texto JSON recibido y lo transforma en un objeto utilizable de JavaScript.
+
+El segundo bloque .then(datos => { ... }) accede a la propiedad datos.mensaje dentro del objeto resultante.
+
+
+
+3.	Cómo se muestra el resultado al usuario.
+
+Se selecciona el elemento del DOM <p id="resultado"></p> mediante document.getElementById("resultado").
+Luego, se modifica su propiedad .textContent asignándole el valor de datos.mensaje.
+
+
+
+
+
+
+4.	Por qué resulta conveniente mostrar la respuesta dentro de la página.
+Experiencia de Usuario (UX): El usuario común no abre las herramientas de desarrollador ni lee la consola del navegador (console.log). 
+Mostrar la confirmación visual en el DOM le asegura que su solicitud fue procesada exitosamente.
+
+Confirmación de estado (Feedback): Evita la incertidumbre y previene que el usuario presione el botón de envío múltiples veces por no saber si la acción se realizó.
+
+Interactividad sin recargar la página: Al usar AJAX (fetch), la pantalla se actualiza dinámicamente en tiempo real sin perder el estado de la aplicación.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------- Mis dudas aclaradas con IA ---------------------
+------------- Material  para estudiar -------------------
+
+
+{
+
+"estado": "OK",
+
+"mensaje": "Operación realizada correctamente"
+
+}
+
+no entiendo esto... En que momento o en que parte le pasas el texto
+
+Operación realizada correctamente" 
+
+-------------------------------
+Es una duda totalmente lógica. Ese texto NO lo escribís ni se lo pasás vos en tu código JavaScript de Frontend.
+
+Ese JSON lo genera y te lo envía el Backend (el servidor) como respuesta.
+
+¿Cómo es el intercambio completo?
+Tu Frontend (Navegador) envía:
+Le mandás al servidor el objeto con los datos del formulario que completó el usuario:
+
+JSON
+{
+  "nombre": "Carlos",
+  "email": "carlos@gmail.com",
+  "edad": 25
+}
+El Backend (Servidor) procesa:
+El servidor recibe tus datos, los guarda en la base de datos y, si todo salió bien, el programador del Backend programó su código para responderte con este mensaje de confirmación:
+
+JSON
+{
+  "estado": "OK",
+  "mensaje": "Operación realizada correctamente"
+}
+Tu Frontend recibe y lee:
+En tu código, cuando hacés esto:
+
+JavaScript
+.then(respuesta => respuesta.json())
+.then(datos => {
+    console.log(datos.mensaje); // Imprime: "Operación realizada correctamente"
+})
+La variable datos atrapa el objeto que te mandó el servidor, y al hacer datos.mensaje, estás leyendo el texto que el servidor escribió para vos.
+
+En resumen
+El body de la solicitud (POST) contiene los datos que vos le mandás al servidor.
+
+El body de la respuesta contiene el JSON que el servidor te devuelve a vos para avisarte que todo salió bien.
