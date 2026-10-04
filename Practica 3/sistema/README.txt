@@ -74,3 +74,19 @@ Justificación:
         0be7ddd4b7ba   mysql:8.4   "docker-entrypoint.s…"   10 seconds ago   Up 8 seconds   0.0.0.0:3306->3306/tcp, [::]:3306->3306/tcp   sistema
 
         
+
+
+             ------------------- Parte 5: Configuracion de Spring Boot -------------------
+
+             Configuracion actual:
+                spring.datasource.url=jdbc:mysql://localhost:3306/sistema?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+                spring.datasource.username=root
+                spring.datasource.password=root
+
+                spring.jpa.hibernate.ddl-auto=update
+                spring.jpa.show-sql=true
+
+                server.port=8080
+
+
+            Tema contraseñas queda pendiende a ocultarlas.
