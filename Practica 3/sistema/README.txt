@@ -61,4 +61,16 @@ Justificación:
      ------------------- Parte 4: Base de datos con docker -------------------
 
     Se realiza la creacion del compose.yaml
-    
+
+    primera salida al ejecutar 
+
+        docker compose up -d
+        ✔ Network sistema_default   Created                                                                                                                                                          0.0s
+        ✔ Volume sistema_mysql_data Created                                                                                                                                                          0.0s
+        ✔ Container sistema         Started   
+
+        docker ps
+        CONTAINER ID   IMAGE       COMMAND                  CREATED          STATUS         PORTS                                         NAMES
+        0be7ddd4b7ba   mysql:8.4   "docker-entrypoint.s…"   10 seconds ago   Up 8 seconds   0.0.0.0:3306->3306/tcp, [::]:3306->3306/tcp   sistema
+
+        
