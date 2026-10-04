@@ -125,3 +125,12 @@ Justificación:
             La clase Ticket se mapea a la tabla ticket (o tickets) en MySQL.
             Cada atributo de la clase (como titulo, descripcion, fechaCreacion) se mapea a una columna de dicha tabla.
             Cada instancia del objeto Ticket corresponde a una fila (registro) dentro de la tabla.
+
+
+
+
+
+
+                        ------------------- Parte 7: Crear el Repository -------------------
+                        ¿Qué problema nos evita resolver JpaRepository?
+                       Nos evita tener que escribir las consultas basicas a mano, utilizando operaciones de persistencia.
