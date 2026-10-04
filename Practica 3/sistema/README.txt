@@ -90,3 +90,38 @@ Justificación:
 
 
             Tema contraseñas queda pendiende a ocultarlas.
+
+
+
+
+            ------------------- Parte 6: Crear la entidad -------------------
+
+            Se crea la carpeta model y la clase Ticket.java para representar la entidad
+            A ticket se le asignan los siguientes datos y sus valores.
+            Id				    long
+            titulo				String
+            descripcion			String
+            prioridad			String
+            estado			    String
+            solicitante			String
+            categoria			String
+            areaResponsable		String
+            fechaCreacion		LocalDateTime
+            fechaCierre         LocalDateTime
+
+
+
+            ¿Por qué esta clase representa una entidad?
+            Porque está anotada con @Entity de Jakarta Persistence (JPA). Esto le indica al ORM (Hibernate) 
+            que esta clase Java debe mapearse a una tabla persistente en la base de datos MySQL. 
+            Cada instancia (objeto) de Ticket representará un registro único (fila) persistido en la tabla.
+            
+            ¿Qué atributo funciona como identificador?
+            El atributo id anotado con @Id. Además, utiliza @GeneratedValue(strategy = GenerationType.IDENTITY), 
+            lo que especifica que la clave primaria es auto-incremental y delegada a la base de datos MySQL (AUTO_INCREMENT).
+            
+            ¿Qué relación existe entre esta clase Java y una tabla de la base de datos?
+            Existe una relación de mapeo objeto-relacional (ORM) de 1 a 1:
+            La clase Ticket se mapea a la tabla ticket (o tickets) en MySQL.
+            Cada atributo de la clase (como titulo, descripcion, fechaCreacion) se mapea a una columna de dicha tabla.
+            Cada instancia del objeto Ticket corresponde a una fila (registro) dentro de la tabla.
