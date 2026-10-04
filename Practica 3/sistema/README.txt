@@ -56,5 +56,9 @@ Justificación:
 
     Podria quitar titulo ya que en la  descripcion se podria agregar al principio, pero en este caso preferi dejarlo para tener mas datos para trabajar.
     Decidi por ejemplo no poner Pais, que depende del sistema podria ser necesario, pero en este caso vamos a interpretar que por el momento solo se usa en el pais actual.
+
+
+     ------------------- Parte 4: Base de datos con docker -------------------
+
+    Se realiza la creacion del compose.yaml
     
-     
