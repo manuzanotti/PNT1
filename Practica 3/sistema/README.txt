@@ -132,5 +132,18 @@ Justificación:
 
 
                         ------------------- Parte 7: Crear el Repository -------------------
+                        Creamos la carpeta Repository y TicketRepository.java dentro de la misma
                         ¿Qué problema nos evita resolver JpaRepository?
                        Nos evita tener que escribir las consultas basicas a mano, utilizando operaciones de persistencia.
+
+
+
+
+                        ------------------- Parte 8: API REST -------------------
+                        Creamos la carpeta Controller y TicketController.java dentro de la misma
+                        Metodos por el momento:
+                        GET     /api/tickets
+                        GET     /api/tickets/{id}
+                        POST    /api/tickets
+                        DELETE  /api/tickets/{id}
+                        
